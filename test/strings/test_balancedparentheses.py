@@ -1,5 +1,5 @@
 import unittest
-from src.balancedparentheses import BalancedParentheses
+from src.strings.balancedparentheses import BalancedParentheses
 
 class BalancedParenthesisTest(unittest.TestCase):
 	def setUp(self):

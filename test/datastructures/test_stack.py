@@ -1,5 +1,5 @@
 import unittest
-from src.stack import Stack
+from src.datastructures.stack import Stack
 
 class TestStack(unittest.TestCase):
 	def setUp(self):

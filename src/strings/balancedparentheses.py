@@ -1,4 +1,4 @@
-from src.stack import Stack
+from src.datastructures.stack import Stack
 
 class BalancedParentheses:
 	@staticmethod
