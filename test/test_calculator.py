@@ -1,12 +1,9 @@
 import unittest
-from app.calculator import Calculator
+from src.calculator import Calculator
 
 class CalculatorTest(unittest.TestCase):
 	def setUp(self):
 		self.calc = Calculator()
-
-	def tearDown(self):
-		self.calc = ''
 
 	def test_sum(self):
 		sum = self.calc.add(1, 3)

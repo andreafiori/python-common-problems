@@ -1,2 +1,5 @@
+# IDE dirs and files
 .idea
+
+# Compilation files
 *.pyc
