@@ -55,7 +55,7 @@ class NumbersUtil:
         return newString
 
     @staticmethod
-    def smallestDivisor(n):
+    def smallest_divisor(n):
         a=[]
         for i in range(2,n+1):
             if(n%i==0):
@@ -64,7 +64,7 @@ class NumbersUtil:
         return a[0]
 
     @staticmethod
-    def calculateDivisors(n):
+    def calculate_divisors(n):
         a = []
         for i in range(1, n+1):
             if (n % i == 0):
@@ -72,7 +72,7 @@ class NumbersUtil:
         return a
 
     @staticmethod
-    def isPrime(n):
+    def is_prime(num):
         # prime numbers are greater than 1
         if num > 1:
             # check for factors
