@@ -1,29 +1,32 @@
 from src.datastructures.stack import Stack
 
+"""
+Check if parenthesis are balanced
+"""
 class BalancedParentheses:
-	@staticmethod
-	def check(symbolString):
-		s = Stack()
-		balanced = True
-		index = 0
-		strLen = len(symbolString)
+    def __init__(self):
+        pass
 
-		if (strLen % 2) != 0:
-			return False
+    @staticmethod
+    def check(symbol_string):
+        s = Stack()
+        balanced = True
+        index = 0
+        strLen = len(symbol_string)
 
-		while index < strLen and balanced:
-			symbol = symbolString[index]
-			if symbol == "(":
-				s.push(symbol)
-			else:
-				if s.isEmpty():
-					balanced = False
-				else:
-					s.pop()
+        if (strLen % 2) != 0:
+            return False
 
-			index = index + 1
+        while index < strLen and balanced:
+            symbol = symbol_string[index]
+            if symbol == "(":
+                s.push(symbol)
+            else:
+                if s.is_empty():
+                    balanced = False
+                else:
+                    s.pop()
 
-		if balanced and s.isEmpty():
-			return True
-		else:
-			return False
+            index = index + 1
+
+        return True if (balanced and s.is_empty()) else False

@@ -20,7 +20,12 @@ Run single unit test:
 Generate coverage
 
 	???
- 
+
+Running pylint:
+
+	pylint src  --disable=missing-docstring
+	pylint test  --disable=missing-docstring
+
 ## Create or Update requirements.txt
 
     pip freeze > requirements.txt

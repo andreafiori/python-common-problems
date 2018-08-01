@@ -1,4 +1,10 @@
+"""
+String Utils
+"""
 class StringUtil:
-	@staticmethod
-	def isPalindrome(n):
-		return str(n) == str(n)[::-1]
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def is_palindrome(num):
+        return str(num) == str(num)[::-1]
