@@ -6,5 +6,9 @@ class StringUtil:
         pass
 
     @staticmethod
-    def is_palindrome(num):
-        return str(num) == str(num)[::-1]
+    def is_palindrome(string):
+        return str(string) == str(string)[::-1]
+
+    @staticmethod
+    def reverse(string):
+        return string[::-1]

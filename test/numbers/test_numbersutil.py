@@ -25,7 +25,7 @@ class NumbersUtilTest(unittest.TestCase):
         self.assertTrue(NumbersUtil.is_prime(11))
 
     def test_is_prime_to_be_false(self):
-        self.assertTrue(NumbersUtil.is_prime(12))
+        self.assertFalse(NumbersUtil.is_prime(12))
 
     def test_find_smallest_divisor(self):
         self.assertEqual(NumbersUtil.smallest_divisor(75), 3)

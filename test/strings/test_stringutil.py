@@ -7,3 +7,6 @@ class StringUtilTest(unittest.TestCase):
 
     def test_is_palindrom_is_false(self):
         self.assertFalse(StringUtil.is_palindrome('asso'))
+
+    def test_reverse(self):
+        self.assertEquals(StringUtil.reverse('hello world'), 'dlrow olleh')

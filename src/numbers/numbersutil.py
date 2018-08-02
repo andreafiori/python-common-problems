@@ -15,10 +15,7 @@ class NumbersUtil:
             dig = number % 10
             rev = rev * 10 + dig
             number = number//10
-        if temp == rev:
-            return True
-        else:
-            return False
+        return True if temp == rev else False
 
     @staticmethod
     def factorial(number):
@@ -54,10 +51,10 @@ class NumbersUtil:
         return new_string
 
     @staticmethod
-    def smallest_divisor(n):
+    def smallest_divisor(num):
         a = []
-        for i in range(2, n + 1):
-            if (n % i) == 0:
+        for i in range(2, num + 1):
+            if (num % i) == 0:
                 a.append(i)
         a.sort()
         return a[0]
@@ -72,17 +69,27 @@ class NumbersUtil:
 
     @staticmethod
     def is_prime(num):
-        # prime numbers are greater than 1
-        if num > 1:
-            # check for factors
-            for i in range(2, num):
-                if (num % i) == 0:
-                    # print(num,"is not a prime number")
-                    # print(i,"times",num//i,"is",num)
-                    return True
-                else:
-                    return True
-        # if input number is less than
-        # or equal to 1, it is not prime
-        else:
+        '''check if integer number is a prime'''
+
+        # make sure n is a positive integer
+        num = abs(int(num))
+
+        # 0 and 1 are not primes
+        if num < 2:
             return False
+
+        # 2 is the only even prime number
+        if num == 2: 
+            return True    
+
+        # all other even numbers are not primes
+        if not num & 1: 
+            return False
+
+        # range starts with 3 and only needs to go up 
+        # the square root of nnumor all odd numbers
+        for x in range(3, int(num ** 0.5) + 1, 2):
+            if num % x == 0:
+                return False
+
+        return True
