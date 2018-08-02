@@ -19,8 +19,7 @@ Generic problems with solutions and tests in Python.
 
 ### Running pylint:
 
-	pylint src  --disable=missing-docstring
-	pylint test  --disable=missing-docstring
+	pylint src --disable=missing-docstring && pylint test --disable=missing-docstring
 
 ## Create or Update dependencies
 

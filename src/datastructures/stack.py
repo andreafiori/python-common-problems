@@ -1,7 +1,7 @@
 """
 Stack memory management
 """
-class Stack:
+class Stack(object):
     def __init__(self):
         self.items = []
 

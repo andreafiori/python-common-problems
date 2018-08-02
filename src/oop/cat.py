@@ -1,18 +1,15 @@
 from abc import ABCMeta, abstractmethod
 
-"""
-Animal parent class
-"""
-class Animal:
+class Animal(object):
     __metaclass__ = ABCMeta
+
+    def __init__(self):
+        pass
 
     @abstractmethod
     def say_something(self):
         return "I'm an animal!"
 
-"""
-Cat child class
-"""
 class Cat(Animal):
     def __init__(self):
         pass

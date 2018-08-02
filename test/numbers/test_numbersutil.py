@@ -29,3 +29,9 @@ class NumbersUtilTest(unittest.TestCase):
 
     def test_find_smallest_divisor(self):
         self.assertEqual(NumbersUtil.smallest_divisor(75), 3)
+
+    def test_is_armstrong_number_to_be_true(self):
+        self.assertTrue(NumbersUtil.is_armstrong_number(407))
+ 
+    def test_is_armstrong_number_to_be_false(self):
+        self.assertFalse(NumbersUtil.is_armstrong_number(663))

@@ -1,7 +1,5 @@
-"""
-Simple Calculator Utility
-"""
-class Calculator:
+""" Simple Calculator Utility """
+class Calculator(object):
     def __init__(self):
         pass
 

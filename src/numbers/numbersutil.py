@@ -1,9 +1,7 @@
 from src.datastructures.stack import Stack
 
-"""
-Numbers Utils
-"""
-class NumbersUtil:
+""" Numbers Utils """
+class NumbersUtil(object):
     def __init__(self):
         pass
 
@@ -28,10 +26,10 @@ class NumbersUtil:
     def factorial_recursive(self, number):
         if number < 1: # base case
             return 1
-        else:
-            return_number = number * self.factorial_recursive(number - 1)  # recursive call
-            # print(str(n) + '! = ' + stragr(returnNumber))
-            return return_number
+
+        num_to_return = number * self.factorial_recursive(number - 1)  # recursive call
+        # print(str(n) + '! = ' + stragr(returnNumber))
+        return num_to_return
 
     @staticmethod
     def convert(dec_number, base):
@@ -52,20 +50,20 @@ class NumbersUtil:
 
     @staticmethod
     def smallest_divisor(num):
-        a = []
+        divisors = []
         for i in range(2, num + 1):
             if (num % i) == 0:
-                a.append(i)
-        a.sort()
-        return a[0]
+                divisors.append(i)
+        divisors.sort()
+        return divisors[0]
 
     @staticmethod
     def calculate_divisors(number):
-        a = []
+        divisors = []
         for i in range(1, number + 1):
             if (number % i) == 0:
-                a.append(i)
-        return a
+                divisors.append(i)
+        return divisors
 
     @staticmethod
     def is_prime(num):
@@ -79,17 +77,31 @@ class NumbersUtil:
             return False
 
         # 2 is the only even prime number
-        if num == 2: 
-            return True    
+        if num == 2:
+            return True
 
         # all other even numbers are not primes
-        if not num & 1: 
+        if not num & 1:
             return False
 
-        # range starts with 3 and only needs to go up 
+        # range starts with 3 and only needs to go up
         # the square root of nnumor all odd numbers
         for x in range(3, int(num ** 0.5) + 1, 2):
             if num % x == 0:
                 return False
 
         return True
+
+    @staticmethod
+    def is_armstrong_number(num):
+        # initialize sum
+        total = 0
+
+        # find the sum of the cube of each digit
+        temp = num
+        while temp > 0:
+            digit = temp % 10
+            total += digit ** 3
+            temp //= 10
+
+        return True if num == total else False

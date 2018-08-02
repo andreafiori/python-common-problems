@@ -1,7 +1,7 @@
 """
 Date and time utilities
 """
-class DateUtils:
+class DateUtils(object):
     def __init__(self):
         pass
 

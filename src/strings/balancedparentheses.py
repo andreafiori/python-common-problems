@@ -3,13 +3,13 @@ from src.datastructures.stack import Stack
 """
 Check if parenthesis are balanced
 """
-class BalancedParentheses:
+class BalancedParentheses(object):
     def __init__(self):
         pass
 
     @staticmethod
     def check(symbol_string):
-        s = Stack()
+        stack = Stack()
         balanced = True
         index = 0
         strLen = len(symbol_string)
@@ -20,13 +20,13 @@ class BalancedParentheses:
         while index < strLen and balanced:
             symbol = symbol_string[index]
             if symbol == "(":
-                s.push(symbol)
+                stack.push(symbol)
             else:
-                if s.is_empty():
+                if stack.is_empty():
                     balanced = False
                 else:
-                    s.pop()
+                    stack.pop()
 
             index = index + 1
 
-        return True if (balanced and s.is_empty()) else False
+        return True if balanced and stack.is_empty() else False
