@@ -5,17 +5,21 @@ class Calculator:
     def __init__(self):
         pass
 
-    def add(self, x, y):
-        return x + y
+    @staticmethod
+    def add(first, second):
+        return first + second
 
-    def subtract(self, x, y):
-        return x - y
+    @staticmethod
+    def subtract(first, second):
+        return first - second
 
-    def multiply(self, x, y):
-        return x * y
+    @staticmethod
+    def multiply(first, second):
+        return first * second
 
-    def divide(self, x, y):
-        if y==0:
+    @staticmethod
+    def divide(first, second):
+        if second == 0:
             raise Exception("You cannot divide by zero!")
         else:
-            return x/y
+            return first/ second

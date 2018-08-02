@@ -1,73 +1,72 @@
 from src.datastructures.stack import Stack
 
 """
-Common function for working with numbers
+Numbers Utils
 """
 class NumbersUtil:
     def __init__(self):
         pass
 
     @staticmethod
-    def is_palindrome(n):
-        temp = n
+    def is_palindrome(number):
+        temp = number
         rev = 0
-        while(n > 0):
-            dig = n % 10
+        while number > 0:
+            dig = number % 10
             rev = rev * 10 + dig
-            n = n//10
-        if (temp==rev):
+            number = number//10
+        if temp == rev:
             return True
         else:
             return False
 
     @staticmethod
-    def factorial(n):
+    def factorial(number):
         result = 1
-        i = n * (n -1)
-        while n >= 1:
-            result = result * n
-            n = n - 1
+        while number >= 1:
+            result = result * number
+            number = number - 1
         return result
 
-    def factorial_recursive(self, n):
-        if n < 1: # base case
+    def factorial_recursive(self, number):
+        if number < 1: # base case
             return 1
         else:
-            returnNumber = n * self.factorial_recursive( n - 1 )  # recursive call
-            # print(str(n) + '! = ' + str(returnNumber))
-            return returnNumber
+            return_number = number * self.factorial_recursive(number - 1)  # recursive call
+            # print(str(n) + '! = ' + stragr(returnNumber))
+            return return_number
 
     @staticmethod
-    def convert(decNumber,base):
+    def convert(dec_number, base):
         digits = "0123456789ABCDEF"
 
         remstack = Stack()
 
-        while decNumber > 0:
-            rem = decNumber % base
+        while dec_number > 0:
+            rem = dec_number % base
             remstack.push(rem)
-            decNumber = decNumber // base
+            dec_number = dec_number // base
 
-        newString = ""
+        new_string = ""
         while not remstack.is_empty():
-            newString = newString + digits[remstack.pop()]
+            new_string = new_string + digits[remstack.pop()]
 
-        return newString
+        return new_string
 
     @staticmethod
     def smallest_divisor(n):
-        a=[]
-        for i in range(2,n+1):
-            if(n%i==0):
+        a = []
+        for i in range(2, n + 1):
+            if (n % i) == 0:
                 a.append(i)
         a.sort()
         return a[0]
 
     @staticmethod
-    def calculate_divisors(n):
+    def calculate_divisors(number):
         a = []
-        for i in range(1, n+1):
-            if (n % i == 0):
+        for i in range(1, number + 1):
+            if (number % i) == 0:
                 a.append(i)
         return a
 
@@ -76,7 +75,7 @@ class NumbersUtil:
         # prime numbers are greater than 1
         if num > 1:
             # check for factors
-            for i in range(2,num):
+            for i in range(2, num):
                 if (num % i) == 0:
                     # print(num,"is not a prime number")
                     # print(i,"times",num//i,"is",num)

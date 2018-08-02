@@ -9,33 +9,28 @@ Generic problems with solutions and tests in Python.
 
 ## Tests
 
-Run all tests:
+### Run all tests:
 
 	python -m unittest discover
 
-Run single unit test:
+### Run single unit test:
 
 	 python -m unittest test.sample
 
-Generate coverage
-
-	???
-
-Running pylint:
+### Running pylint:
 
 	pylint src  --disable=missing-docstring
 	pylint test  --disable=missing-docstring
 
-## Create or Update requirements.txt
+## Create or Update dependencies
 
     pip freeze > requirements.txt
 
 ## Resources
 
 - [Problem Solving with Algorithms and Data Structures using Python](http://interactivepython.org/runestone/static/pythonds/index.html)
+- [Python Algorithms](https://github.com/TheAlgorithms/Python)
 
 ## TODO
 
 - Generate coverage
-- Refactoring: move sources on sub directories
-- Add more samples: https://github.com/TheAlgorithms/Python

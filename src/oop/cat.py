@@ -6,9 +6,6 @@ Animal parent class
 class Animal:
     __metaclass__ = ABCMeta
 
-    def __init__(self):
-        pass
-
     @abstractmethod
     def say_something(self):
         return "I'm an animal!"
