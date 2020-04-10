@@ -1,5 +1,5 @@
 import unittest
-from src.dateutils import DateUtils
+from src.data_structures.dateutils import DateUtils
 
 class DateUtilsTest(unittest.TestCase):
     def test_is_leap_year(self):

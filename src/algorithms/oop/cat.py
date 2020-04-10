@@ -12,7 +12,7 @@ class Animal(object):
 
 class Cat(Animal):
     def __init__(self):
-        pass
+        super().__init__()
 
     def say_something(self):
         s = super(Cat, self).say_something()

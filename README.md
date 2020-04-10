@@ -4,18 +4,38 @@ Generic problems with solutions and tests in Python.
 
 ## Requirements
 
-- Python >= 2.7
+- Python >= 3.0
 - [Coverage](https://coverage.readthedocs.io/en/coverage-4.5.1a/index.html)
 
 ## Tests
 
-### Run all tests:
+Install pytest:
 
-	python -m unittest discover
+    pip install pytest
 
-### Run single unit test:
+Run all tests:
 
-	 python -m unittest test.sample
+    pytest
+
+Run single unit test:
+
+    pytest <path_to_file.py>
+
+Es: pytest tests/algorithms/strings/test_stringutil.py
+
+### Generate code coverage
+
+Install coverage:
+
+    pip install coverage
+
+Show coverage:
+
+    coverage run -m pytest
+
+Generate HTML reports:
+
+    coverage html
 
 ### Running pylint:
 
@@ -29,7 +49,6 @@ Generic problems with solutions and tests in Python.
 
 - [Problem Solving with Algorithms and Data Structures using Python](http://interactivepython.org/runestone/static/pythonds/index.html)
 - [Python Algorithms](https://github.com/TheAlgorithms/Python)
-
-## TODO
-
-- Generate coverage
+- [Python best practices](https://towardsdatascience.com/30-python-best-practices-tips-and-tricks-caefb9f8c5f5)
+- [Python best practices on Real Python](https://realpython.com/tutorials/best-practices/)
+- [File naming conventions](https://softwareengineering.stackexchange.com/questions/308972/python-file-naming-convention)

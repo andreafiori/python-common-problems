@@ -1,4 +1,4 @@
-from src.datastructures.stack import Stack
+from src.data_structures.stack import Stack
 
 """ Numbers Utils """
 class NumbersUtil(object):

@@ -1,5 +1,5 @@
 import unittest
-from src.oop.cat import Cat
+from src.algorithms.oop.cat import Cat
 
 class CatTest(unittest.TestCase):
     def test_say_something(self):

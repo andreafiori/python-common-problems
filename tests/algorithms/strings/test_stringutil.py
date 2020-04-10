@@ -1,5 +1,5 @@
 import unittest
-from src.strings.stringutil import StringUtil
+from src.algorithms.strings.stringutil import StringUtil
 
 class StringUtilTest(unittest.TestCase):
     def test_is_palindrom_is_true(self):
@@ -9,4 +9,4 @@ class StringUtilTest(unittest.TestCase):
         self.assertFalse(StringUtil.is_palindrome('asso'))
 
     def test_reverse(self):
-        self.assertEquals(StringUtil.reverse('hello world'), 'dlrow olleh')
+        self.assertEqual(StringUtil.reverse('hello world'), 'dlrow olleh')
