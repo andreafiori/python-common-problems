@@ -1,5 +1,5 @@
 import unittest
-from src.algorithms.strings.stringutil import StringUtil
+from src.algorithms.strings.string_util import StringUtil
 
 class StringUtilTest(unittest.TestCase):
     def test_is_palindrom_is_true(self):

@@ -1,5 +1,5 @@
 import unittest
-from src.algorithms.numbers.numbersutil import NumbersUtil
+from src.algorithms.numbers.numbers_util import NumbersUtil
 
 class NumbersUtilTest(unittest.TestCase):
     def test_is_palindrome_as_true(self):

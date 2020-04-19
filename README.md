@@ -1,5 +1,7 @@
 # Python problems and solutions
 
+[![Build Status](https://travis-ci.org/andreafiori/python-coding-dojo.svg?branch=master)](https://travis-ci.org/andreafiori/python-coding-dojo)
+
 Generic problems with solutions and tests in Python.
 
 ## Requirements
