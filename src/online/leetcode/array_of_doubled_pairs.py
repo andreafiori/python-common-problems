@@ -1,4 +1,7 @@
-class Solution(object):
+"""
+
+"""
+class ArrayOfDoubledPairs(object):
     def canReorderDoubled(self, A):
         """
         :type A: List[int]
@@ -18,10 +21,10 @@ class Solution(object):
                 return False
         return True
 
-
-if __name__ == '__main__':
-    s = Solution()
-    print s.canReorderDoubled([3, 1, 3, 6])
-    print s.canReorderDoubled([2, 1, 2, 6])
-    print s.canReorderDoubled([4, -2, 2, -4])
-    print s.canReorderDoubled([1, 2, 4, 16, 8, 4])
+"""
+s = ArrayOfDoubledPairs()
+print s.canReorderDoubled([3, 1, 3, 6])
+print s.canReorderDoubled([2, 1, 2, 6])
+print s.canReorderDoubled([4, -2, 2, -4])
+print s.canReorderDoubled([1, 2, 4, 16, 8, 4])
+"""

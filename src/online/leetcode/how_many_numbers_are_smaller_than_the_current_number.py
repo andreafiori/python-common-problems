@@ -13,10 +13,10 @@ class Solution:
     
     def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
         count_list = [0] * 101
-        # count numbers
+        # count math
         for v in nums:
             count_list[v] += 1
-        # compute numbers before current index
+        # compute math before current index
         for i in range(1, 101):
             count_list[i] += count_list[i-1]
         res = []

@@ -1,5 +1,8 @@
-class Solution(object):
-    def numberOfPatterns(self, m, n):
+"""
+
+"""
+class NumberOfPatterns(object):
+    def solution(self, m, n):
         """
         :type m: int
         :type n: int
@@ -13,6 +16,13 @@ class Solution(object):
         return res
 
     def is_valid(self, used, index, last):
+        """
+        Check if inputs are valid
+        :param used:
+        :param index:
+        :param last:
+        :return:
+        """
         # markded
         if used[index]:
             return False

@@ -1,11 +1,15 @@
-# Definition for singly-linked list.
+"""
+Definition for singly-linked list.
+"""
 class ListNode(object):
     def __init__(self, x):
         self.val = x
         self.next = None
 
+"""
 
-class Solution(object):
+"""
+class AddTwoNumbers(object):
     # def addTwoNumbers(self, l1, l2):
     #     """
     #     :type l1: ListNode
@@ -37,7 +41,13 @@ class Solution(object):
     #         prev = current
     #     return head
 
-    def addTwoNumbers(self, l1, l2):
+    def solution(self, l1, l2):
+        """
+        Solution
+        :param l1: int
+        :param l2: int
+        :return:
+        """
         carry = 0
         # dummy head
         head = curr = ListNode(0)

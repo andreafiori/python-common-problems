@@ -19,6 +19,10 @@ Run all tests:
 
     pytest
 
+Stop pytest after first failure
+
+    pytest -x
+
 Run single unit test:
 
     pytest <path_to_file.py>

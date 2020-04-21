@@ -1,5 +1,5 @@
 import unittest
-from src.online.codility.count_div import solution
+from src.online.codility.prefix_sums.count_div import solution
 
 """
 example

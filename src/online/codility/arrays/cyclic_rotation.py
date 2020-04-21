@@ -1,7 +1,7 @@
 """
 URL: https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/
 """
-def solution(A, K):
+def cyclic_rotation(A, K):
     """
     Rotate the array A by k steps
     :param A: an array of integers

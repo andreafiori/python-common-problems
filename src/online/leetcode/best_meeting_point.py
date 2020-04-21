@@ -1,3 +1,6 @@
+"""
+Best Meeting Point
+"""
 class Solution(object):
     # def minTotalDistance(self, grid):
     #     """

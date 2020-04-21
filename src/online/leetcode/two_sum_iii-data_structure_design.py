@@ -22,7 +22,7 @@ class TwoSum(object):
 
     def find(self, value):
         """
-        Find if there exists any pair of numbers which sum is equal to the value.
+        Find if there exists any pair of math which sum is equal to the value.
         :type value: int
         :rtype: bool
         """

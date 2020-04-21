@@ -114,7 +114,7 @@ class TestExercise(unittest.TestCase):
         self.assertEqual(solution([3, 3, 3, 3, 2, 1]), 0)
 
     def test_extreme(self):
-        # full complement of numbers
+        # full complement of math
         arr = range(*ARR_RANGE)
         random.shuffle(arr)
         self.assertEqual(solution(arr), 1)

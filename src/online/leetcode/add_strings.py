@@ -1,5 +1,8 @@
-class Solution(object):
-    # def addStrings(self, num1, num2):
+"""
+
+"""
+class AddStrings(object):
+    # def solution(self, num1, num2):
     #     """
     #     :type num1: str
     #     :type num2: str
@@ -32,7 +35,7 @@ class Solution(object):
     #         res.insert(0, str(carry))
     #     return ''.join(res)
 
-    def addStrings(self, num1, num2):
+    def solution(self, num1, num2):
         res = []
         pos1 = len(num1) - 1
         pos2 = len(num2) - 1
