@@ -1,6 +1,7 @@
 import unittest
 from src.algorithms.math.calculator import Calculator
 
+
 class CalculatorTest(unittest.TestCase):
     def test_sum(self):
         self.assertEqual(Calculator.add(1, 3), 4)

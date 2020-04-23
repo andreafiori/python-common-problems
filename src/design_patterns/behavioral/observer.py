@@ -8,6 +8,8 @@ Maintains a list of dependents and notifies them of any state changes.
 Django Signals: https://docs.djangoproject.com/en/2.1/topics/signals/
 Flask Signals: http://flask.pocoo.org/docs/1.0/signals/
 """
+
+
 class Subject:
     def __init__(self):
         self._observers = []

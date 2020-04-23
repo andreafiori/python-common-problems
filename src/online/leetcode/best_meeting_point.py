@@ -1,7 +1,10 @@
 """
 Best Meeting Point
+
 """
-class Solution(object):
+
+
+class BestMeetingPoint(object):
     # def minTotalDistance(self, grid):
     #     """
     #     :type grid: List[List[int]]
@@ -27,7 +30,11 @@ class Solution(object):
     #     return distance
 
     def minDistance1D(self, points):
-        # two points
+        """
+        Minimum distance ID
+        :param points:
+        :return:
+        """
         distance = 0
         i, j = 0, len(points) - 1
         while i < j:
@@ -37,6 +44,11 @@ class Solution(object):
         return distance
 
     def minTotalDistance(self, grid):
+        """
+        Minimum total distance
+        :param grid:
+        :return:
+        """
         rows = self.collectRows(grid)
         cols = self.collectCols(grid)
         row = rows[len(rows) / 2]
@@ -52,6 +64,11 @@ class Solution(object):
         return rows
 
     def collectCols(self, grid):
+        """
+        Collect cols
+        :param grid:
+        :return:
+        """
         cols = []
         for j in range(len(grid[0])):
             for i in range(len(grid)):

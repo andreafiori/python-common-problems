@@ -1,5 +1,4 @@
 """
-*TL;DR
 Separates data in GUIs from the ways it is presented, and accepted.
 """
 
@@ -102,16 +101,15 @@ class Controller:
             self.view.show_item_information(item_type, item_name, item_info)
 
 
-if __name__ == '__main__':
-
-    model = ProductModel()
-    view = ConsoleView()
-    controller = Controller(model, view)
-    controller.show_items()
-    controller.show_item_information('cheese')
-    controller.show_item_information('eggs')
-    controller.show_item_information('milk')
-    controller.show_item_information('arepas')
+"""
+model = ProductModel()
+view = ConsoleView()
+controller = Controller(model, view)
+controller.show_items()
+controller.show_item_information('cheese')
+controller.show_item_information('eggs')
+controller.show_item_information('milk')
+controller.show_item_information('arepas')
 
 
 ### OUTPUT ###
@@ -130,3 +128,4 @@ if __name__ == '__main__':
 # Name: Milk, Price: 1.50, Quantity: 10
 #
 # That product "arepas" does not exist in the records
+"""

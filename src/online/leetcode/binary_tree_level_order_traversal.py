@@ -1,11 +1,10 @@
-# Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+"""
+https://leetcode.com/discuss/90680/9-lines-python-code
+"""
+
 
 class Solution(object):
+    # ifrom ..leetcode.tree_node import TreeNode
     # def levelOrder(self, root):
     #     """
     #     :type root: TreeNode
@@ -27,7 +26,6 @@ class Solution(object):
     #     self.get_level(res, root.right, depth + 1)
 
     def levelOrder(self, root):
-        # https://leetcode.com/discuss/90680/9-lines-python-code
         if root is None:
             return []
         q = [[root]]
@@ -41,4 +39,3 @@ class Solution(object):
             if record:
                 q.append(record)
         return [[x.val for x in level] for level in q]
-

@@ -2,6 +2,7 @@
 .idea
 
 # Byte-compiled / optimized / DLL files
+.pytest_cache/
 __pycache__/
 *.py[cod]
 
@@ -33,6 +34,7 @@ pip-delete-this-directory.txt
 .cache
 nosetests.xml
 coverage.xml
+htmlcov/
 
 # Translations
 *.mo

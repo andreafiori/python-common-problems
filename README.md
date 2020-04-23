@@ -41,6 +41,7 @@ Show coverage:
 
 Generate HTML reports:
 
+    coverage run -m pytest
     coverage html
 
 ### Running pylint:

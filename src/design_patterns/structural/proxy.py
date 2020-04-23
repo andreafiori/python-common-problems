@@ -10,7 +10,6 @@ the proxy pattern usages.
 https://refactoring.guru/design-patterns/proxy/python/example
 https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Fronting.html
 
-*TL;DR
 Add functionality or logic (e.g. logging, caching, authorization) to a resource
 without changing its interface.
 """
@@ -60,28 +59,23 @@ class Proxy(Subject):
 def client(job_doer, user):
     job_doer.do_the_job(user)
 
-def main():
-    """
-    >>> proxy = Proxy()
 
-    >>> real_subject = RealSubject()
+"""
+>>> proxy = Proxy()
 
-    >>> client(proxy, 'admin')
-    [log] Doing the job for admin is requested.
-    I am doing the job for admin
+>>> real_subject = RealSubject()
 
-    >>> client(proxy, 'anonymous')
-    [log] Doing the job for anonymous is requested.
-    [log] I can do the job just for `admins`.
+>>> client(proxy, 'admin')
+[log] Doing the job for admin is requested.
+I am doing the job for admin
 
-    >>> client(real_subject, 'admin')
-    I am doing the job for admin
+>>> client(proxy, 'anonymous')
+[log] Doing the job for anonymous is requested.
+[log] I can do the job just for `admins`.
 
-    >>> client(real_subject, 'anonymous')
-    I am doing the job for anonymous
-    """
+>>> client(real_subject, 'admin')
+I am doing the job for admin
 
-
-if __name__ == '__main__':
-    import doctest
-    doctest.testmod()
+>>> client(real_subject, 'anonymous')
+I am doing the job for anonymous
+"""

@@ -8,12 +8,12 @@ Provides a centralized entry point that controls and manages request handling.
 
 class MobileView:
     def show_index_page(self):
-        print('Displaying mobile index page')
+        return 'Displaying mobile index page'
 
 
 class TabletView:
     def show_index_page(self):
-        print('Displaying tablet index page')
+        return 'Displaying tablet index page'
 
 
 class Dispatcher:
@@ -27,7 +27,7 @@ class Dispatcher:
         elif request.type == Request.tablet_type:
             self.tablet_view.show_index_page()
         else:
-            print('cant dispatch the request')
+            return 'cannot dispatch the request'
 
 
 class RequestController:
@@ -57,18 +57,17 @@ class Request:
         elif request == self.tablet_type:
             self.type = self.tablet_type
 
+"""
+front_controller = RequestController()
+front_controller.dispatch_request(Request('mobile'))
+front_controller.dispatch_request(Request('tablet'))
 
-if __name__ == '__main__':
-    front_controller = RequestController()
-    front_controller.dispatch_request(Request('mobile'))
-    front_controller.dispatch_request(Request('tablet'))
-
-    front_controller.dispatch_request(Request('desktop'))
-    front_controller.dispatch_request('mobile')
-
+front_controller.dispatch_request(Request('desktop'))
+front_controller.dispatch_request('mobile')
 
 ### OUTPUT ###
 # Displaying mobile index page
 # Displaying tablet index page
 # cant dispatch the request
 # request must be a Request object
+"""

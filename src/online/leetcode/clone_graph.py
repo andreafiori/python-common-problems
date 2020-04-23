@@ -1,8 +1,7 @@
-# Definition for a undirected graph node
-# class UndirectedGraphNode(object):
-#     def __init__(self, x):
-#         self.label = x
-#         self.neighbors = []
+class UndirectedGraphNode(object):
+    def __init__(self, x):
+        self.label = x
+        self.neighbors = []
 
 class Solution(object):
 
@@ -26,7 +25,7 @@ class Solution(object):
     #             res.neighbors.append(self.label_map[ne.label])
     #     return res
 
-    def cloneGraph(self, node):
+    def clone_graph(self, node):
         # BFS
         if node is None:
             return None
@@ -45,4 +44,3 @@ class Solution(object):
                     label_map[ne.label] = neighborCopy
                     queue.append(ne)
         return graphCopy
-

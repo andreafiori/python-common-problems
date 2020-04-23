@@ -1,9 +1,4 @@
-# Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+from ..leetcode.tree_node import TreeNode
 
 class Solution(object):
     # def inorderTraversal(self, root):
@@ -44,6 +39,7 @@ class Solution(object):
     #                 queue.insert(0, curr.left)
     #                 curr.left = None
     #     return res
+
     # def inorderTraversal(self, root):
     #     res = []
     #     stack = []
@@ -58,7 +54,8 @@ class Solution(object):
     #             root = root.right
     #     return res
 
-    def inorderTraversal(self, root):
+    @staticmethod
+    def in_order_traversal(root):
         if root is None:
             return []
         res = []
@@ -74,6 +71,3 @@ class Solution(object):
             if curr.left is not None:
                 stack.append(curr.left)
         return res
-
-
-

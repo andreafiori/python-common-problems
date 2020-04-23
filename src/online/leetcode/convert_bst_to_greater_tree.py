@@ -11,7 +11,12 @@ class Solution(object):
     #         self.convertBST(root.left)
     #     return root
 
-    def convertBST(self, root):
+    def convert_bst(self, root):
+        """
+
+        :param root:
+        :return:
+        """
         total = 0
         
         node = root
@@ -27,8 +32,7 @@ class Solution(object):
             total += node.val
             node.val = total
 
-            # all nodes with values between the current and its parent lie in
-            # the left subtree.
+            # all nodes with values between the current and its parent lie in the left subtree.
             node = node.left
 
         return root

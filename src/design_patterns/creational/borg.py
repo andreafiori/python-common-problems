@@ -27,7 +27,6 @@ https://github.com/onetwopunch/pythonDbTemplate/blob/master/database.py
 *References:
 https://fkromer.github.io/python-pattern-references/design/#singleton
 
-*TL;DR
 Provides singleton-like behavior sharing state between instances.
 """
 
@@ -47,44 +46,38 @@ class YourBorg(Borg):
     pass
 
 
-def main():
-    """
-    >>> rm1 = Borg()
-    >>> rm2 = Borg()
+"""
+>>> rm1 = Borg()
+>>> rm2 = Borg()
 
-    >>> rm1.state = 'Idle'
-    >>> rm2.state = 'Running'
+>>> rm1.state = 'Idle'
+>>> rm2.state = 'Running'
 
-    >>> print('rm1: {0}'.format(rm1))
-    rm1: Running
-    >>> print('rm2: {0}'.format(rm2))
-    rm2: Running
+>>> print('rm1: {0}'.format(rm1))
+rm1: Running
+>>> print('rm2: {0}'.format(rm2))
+rm2: Running
 
-    # When the `state` attribute is modified from instance `rm2`,
-    # the value of `state` in instance `rm1` also changes
-    >>> rm2.state = 'Zombie'
+# When the `state` attribute is modified from instance `rm2`,
+# the value of `state` in instance `rm1` also changes
+>>> rm2.state = 'Zombie'
 
-    >>> print('rm1: {0}'.format(rm1))
-    rm1: Zombie
-    >>> print('rm2: {0}'.format(rm2))
-    rm2: Zombie
+>>> print('rm1: {0}'.format(rm1))
+rm1: Zombie
+>>> print('rm2: {0}'.format(rm2))
+rm2: Zombie
 
-    # Even though `rm1` and `rm2` share attributes, the instances are not the same
-    >>> rm1 is rm2
-    False
+# Even though `rm1` and `rm2` share attributes, the instances are not the same
+>>> rm1 is rm2
+False
 
-    # Shared state is also modified from a subclass instance `rm3`
-    >>> rm3 = YourBorg()
+# Shared state is also modified from a subclass instance `rm3`
+>>> rm3 = YourBorg()
 
-    >>> print('rm1: {0}'.format(rm1))
-    rm1: Init
-    >>> print('rm2: {0}'.format(rm2))
-    rm2: Init
-    >>> print('rm3: {0}'.format(rm3))
-    rm3: Init
-    """
-
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
+>>> print('rm1: {0}'.format(rm1))
+rm1: Init
+>>> print('rm2: {0}'.format(rm2))
+rm2: Init
+>>> print('rm3: {0}'.format(rm3))
+rm3: Init
+"""

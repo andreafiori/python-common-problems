@@ -91,23 +91,17 @@ def construct_building(cls):
     return building
 
 
-def main():
-    """
-    >>> house = House()
-    >>> house
-    Floor: One | Size: Big
+"""
+>>> house = House()
+>>> house
+Floor: One | Size: Big
 
-    >>> flat = Flat()
-    >>> flat
-    Floor: More than One | Size: Small
+>>> flat = Flat()
+>>> flat
+Floor: More than One | Size: Small
 
-    # Using an external constructor function:
-    >>> complex_house = construct_building(ComplexHouse)
-    >>> complex_house
-    Floor: One | Size: Big and fancy
-    """
-
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
+# Using an external constructor function:
+>>> complex_house = construct_building(ComplexHouse)
+>>> complex_house
+Floor: One | Size: Big and fancy
+"""

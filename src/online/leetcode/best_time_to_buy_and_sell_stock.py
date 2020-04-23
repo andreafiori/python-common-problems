@@ -1,5 +1,11 @@
-class Solution(object):
-    def maxProfit(self, prices):
+"""
+Best time to buy and sell stock
+"""
+
+
+class BestTimeToBuyAndSellStock(object):
+    @staticmethod
+    def maxProfit(prices):
         """
         :type prices: List[int]
         :rtype: int

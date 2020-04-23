@@ -1,9 +1,7 @@
 from src.data_structures.stack import Stack
 
-class NumbersUtil(object):
-    def __init__(self):
-        pass
 
+class NumbersUtil(object):
     @staticmethod
     def is_palindrome(number):
         temp = number
@@ -14,21 +12,7 @@ class NumbersUtil(object):
             number = number//10
         return True if temp == rev else False
 
-    @staticmethod
-    def factorial(number):
-        result = 1
-        while number >= 1:
-            result = result * number
-            number = number - 1
-        return result
 
-    def factorial_recursive(self, number):
-        if number < 1: # base case
-            return 1
-
-        num_to_return = number * self.factorial_recursive(number - 1)  # recursive call
-        # print(str(n) + '! = ' + stragr(returnNumber))
-        return num_to_return
 
     @staticmethod
     def convert(dec_number, base):
@@ -66,7 +50,11 @@ class NumbersUtil(object):
 
     @staticmethod
     def is_prime(num):
-        '''check if integer number is a prime'''
+        """
+        Check if integer number is a prime
+        :param num: 
+        :return: 
+        """
 
         # make sure n is a positive integer
         num = abs(int(num))
@@ -93,7 +81,11 @@ class NumbersUtil(object):
 
     @staticmethod
     def is_armstrong_number(num):
-        # initialize sum
+        """
+        Check if num it's an Armstrong number
+        :param num: int
+        :return: 
+        """
         total = 0
 
         # find the sum of the cube of each digit

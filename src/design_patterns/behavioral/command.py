@@ -72,33 +72,27 @@ class MenuItem:
         self._command.undo()
 
 
-def main():
-    """
-    >>> item1 = MenuItem(DeleteFileCommand())
+"""
+>>> item1 = MenuItem(DeleteFileCommand())
 
-    >>> item2 = MenuItem(HideFileCommand())
+>>> item2 = MenuItem(HideFileCommand())
 
-    # create a file named `test-file` to work with
-    >>> test_file_name = 'test-file'
+# create a file named `test-file` to work with
+>>> test_file_name = 'test-file'
 
-    # deleting `test-file`
-    >>> item1.on_do_press(test_file_name)
-    deleting test-file
+# deleting `test-file`
+>>> item1.on_do_press(test_file_name)
+deleting test-file
 
-    # restoring `test-file`
-    >>> item1.on_undo_press()
-    restoring test-file
+# restoring `test-file`
+>>> item1.on_undo_press()
+restoring test-file
 
-    # hiding `test-file`
-    >>> item2.on_do_press(test_file_name)
-    hiding test-file
+# hiding `test-file`
+>>> item2.on_do_press(test_file_name)
+hiding test-file
 
-    # un-hiding `test-file`
-    >>> item2.on_undo_press()
-    un-hiding test-file
-    """
-
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
+# un-hiding `test-file`
+>>> item2.on_undo_press()
+un-hiding test-file
+"""

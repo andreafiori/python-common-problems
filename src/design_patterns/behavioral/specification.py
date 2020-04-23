@@ -1,7 +1,6 @@
 """
 @author: Gordeev Andrey <gordeev.and.and@gmail.com>
 
-*TL;DR
 Provides recombination business logic by chaining together using boolean logic.
 """
 
@@ -87,24 +86,18 @@ class SuperUserSpecification(CompositeSpecification):
         return getattr(candidate, 'super_user', False)
 
 
-def main():
-    """
-    >>> andrey = User()
-    >>> ivan = User(super_user=True)
-    >>> vasiliy = 'not User instance'
+"""
+>>> andrey = User()
+>>> ivan = User(super_user=True)
+>>> vasiliy = 'not User instance'
 
-    >>> root_specification = UserSpecification().and_specification(SuperUserSpecification())
+>>> root_specification = UserSpecification().and_specification(SuperUserSpecification())
 
-    # Is specification satisfied by <name>
-    >>> root_specification.is_satisfied_by(andrey), 'andrey'
-    (False, 'andrey')
-    >>> root_specification.is_satisfied_by(ivan), 'ivan'
-    (True, 'ivan')
-    >>> root_specification.is_satisfied_by(vasiliy), 'vasiliy'
-    (False, 'vasiliy')
-    """
-
-
-if __name__ == '__main__':
-    import doctest
-    doctest.testmod()
+# Is specification satisfied by <name>
+>>> root_specification.is_satisfied_by(andrey), 'andrey'
+(False, 'andrey')
+>>> root_specification.is_satisfied_by(ivan), 'ivan'
+(True, 'ivan')
+>>> root_specification.is_satisfied_by(vasiliy), 'vasiliy'
+(False, 'vasiliy')
+"""

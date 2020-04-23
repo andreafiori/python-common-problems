@@ -1,5 +1,10 @@
 class Person:
     def __init__(self, name, action):
+        """
+        Constructor
+        :param name:
+        :param action:
+        """
         self.name = name
         self.action = action
 
@@ -20,15 +25,9 @@ class Action:
         print('then stop')
 
 
-def main():
-    """
-    >>> move = Action('move')
-    >>> person = Person('Jack', move)
-    >>> person.do_action().amount('5m').stop()
-    Jack move 5m then stop
-    """
-
-
-if __name__ == '__main__':
-    import doctest
-    doctest.testmod()
+"""
+>>> move = Action('move')
+>>> person = Person('Jack', move)
+>>> person.do_action().amount('5m').stop()
+Jack move 5m then stop
+"""

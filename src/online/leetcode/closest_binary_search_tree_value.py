@@ -1,12 +1,6 @@
-# Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
-
 class Solution(object):
-    # def closestValue(self, root, target):
+    # from ..leetcode.tree_node import TreeNode
+    # def closest_value(self, root, target):
     #     """
     #     :type root: TreeNode
     #     :type target: float
@@ -16,7 +10,7 @@ class Solution(object):
     #     return self.closestValue_helper(root, target, 21474483647)
 
     
-    # def closestValue_helper(self, root, target, curr_min):
+    # def closest_value_helper(self, root, target, curr_min):
     #     if root is None:
     #         return curr_min
     #     if abs(root.val - target) < abs(curr_min - target):
@@ -28,7 +22,7 @@ class Solution(object):
     #     else:
     #         return right_min
 
-    # def closestValue(self, root, target):
+    # def closest_value(self, root, target):
     #     # Iteratively compare root result with current kid's result (left or right)
     #     path = []
     #     while root:
@@ -36,11 +30,10 @@ class Solution(object):
     #         root = root.left if target < root.val else root.right
     #     return min(path, key=lambda x: abs(target - x))
 
-    def closestValue(self, root, target):
+    def closest_value(self, root, target):
         # compare kids' result with root
         kid = root.left if target < root.val else root.right
         if not kid:
             return root.val
-        kid_min = self.closestValue(kid, target)
+        kid_min = self.closest_value(kid, target)
         return min((kid_min, root.val), key=lambda x: abs(target - x))
-

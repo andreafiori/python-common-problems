@@ -42,22 +42,22 @@ class Card2(metaclass=FlyweightMeta):
         # print('Init {}: {}'.format(self.__class__, (args, kwargs)))
         pass
 
+"""
+instances_pool = getattr(Card2, 'pool')
+cm1 = Card2('10', 'h', a=1)
+cm2 = Card2('10', 'h', a=1)
+cm3 = Card2('10', 'h', a=2)
 
-if __name__ == '__main__':
-    instances_pool = getattr(Card2, 'pool')
-    cm1 = Card2('10', 'h', a=1)
-    cm2 = Card2('10', 'h', a=1)
-    cm3 = Card2('10', 'h', a=2)
+assert (cm1 == cm2) and (cm1 != cm3)
+assert (cm1 is cm2) and (cm1 is not cm3)
+assert len(instances_pool) == 2
 
-    assert (cm1 == cm2) and (cm1 != cm3)
-    assert (cm1 is cm2) and (cm1 is not cm3)
-    assert len(instances_pool) == 2
+del cm1
+assert len(instances_pool) == 2
 
-    del cm1
-    assert len(instances_pool) == 2
+del cm2
+assert len(instances_pool) == 1
 
-    del cm2
-    assert len(instances_pool) == 1
-
-    del cm3
-    assert len(instances_pool) == 0
+del cm3
+assert len(instances_pool) == 0
+"""

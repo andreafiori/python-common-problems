@@ -1,3 +1,9 @@
+"""
+Registry Holder
+
+"""
+
+
 class RegistryHolder(type):
 
     REGISTRY = {}
@@ -24,22 +30,16 @@ class BaseRegisteredClass(metaclass=RegistryHolder):
     """
 
 
-def main():
-    """
-    Before subclassing
-    >>> sorted(RegistryHolder.REGISTRY)
-    ['BaseRegisteredClass']
+"""
+Before subclassing
+>>> sorted(RegistryHolder.REGISTRY)
+['BaseRegisteredClass']
 
-    >>> class ClassRegistree(BaseRegisteredClass):
-    ...    def __init__(self, *args, **kwargs):
-    ...        pass
+>>> class ClassRegistree(BaseRegisteredClass):
+...    def __init__(self, *args, **kwargs):
+...        pass
 
-    After subclassing
-    >>> sorted(RegistryHolder.REGISTRY)
-    ['BaseRegisteredClass', 'ClassRegistree']
-    """
-
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod(optionflags=doctest.ELLIPSIS)
+After subclassing
+>>> sorted(RegistryHolder.REGISTRY)
+['BaseRegisteredClass', 'ClassRegistree']
+"""

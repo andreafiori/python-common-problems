@@ -1,7 +1,10 @@
 """
+https://leetcode.com/problems/android-unlock-patterns/
 
 """
-class NumberOfPatterns(object):
+
+
+class AndroidUnlockPatterns(object):
     def solution(self, m, n):
         """
         :type m: int

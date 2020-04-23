@@ -1,8 +1,6 @@
 import math
 
-"""
-Prime Factors
-"""
+
 class PrimeFactors(object):
     @staticmethod
     def get_prime_numbers(n):
@@ -33,13 +31,12 @@ class PrimeFactors(object):
         return prime_numbers
 
     @staticmethod
-    def is_prime(n):
+    def is_prime(num):
         """
         Check if a number is prime
-        :param n:
+        :param num: int
         :return:
         """
-        num = 407
 
         # To take input from the user num = int(input("Enter a number: "))
 

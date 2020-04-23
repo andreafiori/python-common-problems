@@ -44,9 +44,3 @@ class Delegate:
 
     def do_something(self, something):
         return "Doing %s" % something
-
-
-if __name__ == '__main__':
-    import doctest
-
-    doctest.testmod()

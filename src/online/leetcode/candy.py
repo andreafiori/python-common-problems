@@ -1,10 +1,10 @@
 class Solution(object):
     def candy(self, ratings):
         """
+        https://discuss.leetcode.com/topic/5243/a-simple-solution
         :type ratings: List[int]
         :rtype: int
         """
-        # https://discuss.leetcode.com/topic/5243/a-simple-solution
         if ratings is None or len(ratings) == 0:
             return 0
         ls = len(ratings)
@@ -16,4 +16,3 @@ class Solution(object):
             if ratings[i - 1] > ratings[i]:
                 num[i - 1] = max(num[i] + 1, num[i - 1])
         return sum(num)
-

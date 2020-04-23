@@ -1,8 +1,6 @@
 """
-*References:
-http://en.wikibooks.org/wiki/Computer_Science_Design_Patterns/Bridge_Pattern#Python
+*References: http://en.wikibooks.org/wiki/Computer_Science_Design_Patterns/Bridge_Pattern#Python
 
-*TL;DR
 Decouples an abstraction from its implementation.
 """
 
@@ -10,13 +8,13 @@ Decouples an abstraction from its implementation.
 # ConcreteImplementor 1/2
 class DrawingAPI1:
     def draw_circle(self, x, y, radius):
-        print('API1.circle at {}:{} radius {}'.format(x, y, radius))
+        return 'API1.circle at {}:{} radius {}'.format(x, y, radius)
 
 
 # ConcreteImplementor 2/2
 class DrawingAPI2:
     def draw_circle(self, x, y, radius):
-        print('API2.circle at {}:{} radius {}'.format(x, y, radius))
+        return 'API2.circle at {}:{} radius {}'.format(x, y, radius)
 
 
 # Refined Abstraction
@@ -36,18 +34,12 @@ class CircleShape:
         self._radius *= pct
 
 
-def main():
-    """
-    >>> shapes = (CircleShape(1, 2, 3, DrawingAPI1()), CircleShape(5, 7, 11, DrawingAPI2()))
+"""
+>>> shapes = (CircleShape(1, 2, 3, DrawingAPI1()), CircleShape(5, 7, 11, DrawingAPI2()))
 
-    >>> for shape in shapes:
-    ...    shape.scale(2.5)
-    ...    shape.draw()
-    API1.circle at 1:2 radius 7.5
-    API2.circle at 5:7 radius 27.5
-    """
-
-
-if __name__ == '__main__':
-    import doctest
-    doctest.testmod()
+>>> for shape in shapes:
+...    shape.scale(2.5)
+...    shape.draw()
+API1.circle at 1:2 radius 7.5
+API2.circle at 5:7 radius 27.5
+"""

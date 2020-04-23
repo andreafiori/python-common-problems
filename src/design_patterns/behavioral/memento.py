@@ -1,7 +1,6 @@
 """
-http://code.activestate.com/recipes/413838-memento-closure/
+Memento: http://code.activestate.com/recipes/413838-memento-closure/
 
-*TL;DR
 Provides the ability to restore an object to its previous state.
 """
 
@@ -20,7 +19,8 @@ def memento(obj, deep=False):
 
 
 class Transaction:
-    """A transaction guard.
+    """
+    A transaction guard.
 
     This is, in fact, just syntactic sugar around a memento closure.
     """
@@ -42,7 +42,8 @@ class Transaction:
 
 
 class Transactional:
-    """Adds transactional semantics to methods. Methods decorated  with
+    """
+    Adds transactional semantics to methods. Methods decorated  with
 
     @Transactional will rollback to entry-state upon exceptions.
     """
@@ -50,7 +51,7 @@ class Transactional:
     def __init__(self, method):
         self.method = method
 
-    def __get__(self, obj, T):
+    def __get__(self, obj):
         def transaction(*args, **kwargs):
             state = memento(obj)
             try:
@@ -78,60 +79,54 @@ class NumObj:
         self.increment()  # <- will fail and rollback
 
 
-def main():
-    """
-    >>> num_obj = NumObj(-1)
-    >>> print(num_obj)
-    <NumObj: -1>
+"""
+>>> num_obj = NumObj(-1)
+>>> print(num_obj)
+<NumObj: -1>
 
-    >>> a_transaction = Transaction(True, num_obj)
+>>> a_transaction = Transaction(True, num_obj)
 
-    >>> try:
-    ...    for i in range(3):
-    ...        num_obj.increment()
-    ...        print(num_obj)
-    ...    a_transaction.commit()
-    ...    print('-- committed')
-    ...    for i in range(3):
-    ...        num_obj.increment()
-    ...        print(num_obj)
-    ...    num_obj.value += 'x'  # will fail
-    ...    print(num_obj)
-    ... except Exception:
-    ...    a_transaction.rollback()
-    ...    print('-- rolled back')
-    <NumObj: 0>
-    <NumObj: 1>
-    <NumObj: 2>
-    -- committed
-    <NumObj: 3>
-    <NumObj: 4>
-    <NumObj: 5>
-    -- rolled back
+>>> try:
+...    for i in range(3):
+...        num_obj.increment()
+...        print(num_obj)
+...    a_transaction.commit()
+...    print('-- committed')
+...    for i in range(3):
+...        num_obj.increment()
+...        print(num_obj)
+...    num_obj.value += 'x'  # will fail
+...    print(num_obj)
+... except Exception:
+...    a_transaction.rollback()
+...    print('-- rolled back')
+<NumObj: 0>
+<NumObj: 1>
+<NumObj: 2>
+-- committed
+<NumObj: 3>
+<NumObj: 4>
+<NumObj: 5>
+-- rolled back
 
-    >>> print(num_obj)
-    <NumObj: 2>
+>>> print(num_obj)
+<NumObj: 2>
 
-    >>> print('-- now doing stuff ...')
-    -- now doing stuff ...
+>>> print('-- now doing stuff ...')
+-- now doing stuff ...
 
-    >>> try:
-    ...    num_obj.do_stuff()
-    ... except Exception:
-    ...    print('-> doing stuff failed!')
-    ...    import sys
-    ...    import traceback
-    ...    traceback.print_exc(file=sys.stdout)
-    -> doing stuff failed!
-    Traceback (most recent call last):
-    ...
-    TypeError: ...str...int...
+>>> try:
+...    num_obj.do_stuff()
+... except Exception:
+...    print('-> doing stuff failed!')
+...    import sys
+...    import traceback
+...    traceback.print_exc(file=sys.stdout)
+-> doing stuff failed!
+Traceback (most recent call last):
+...
+TypeError: ...str...int...
 
-    >>> print(num_obj)
-    <NumObj: 2>
-    """
-
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod(optionflags=doctest.ELLIPSIS)
+>>> print(num_obj)
+<NumObj: 2>
+"""

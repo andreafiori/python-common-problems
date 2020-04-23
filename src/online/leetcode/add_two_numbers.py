@@ -3,12 +3,12 @@ Definition for singly-linked list.
 """
 class ListNode(object):
     def __init__(self, x):
+        """
+        :param x:
+        """
         self.val = x
         self.next = None
 
-"""
-
-"""
 class AddTwoNumbers(object):
     # def addTwoNumbers(self, l1, l2):
     #     """
@@ -49,7 +49,6 @@ class AddTwoNumbers(object):
         :return:
         """
         carry = 0
-        # dummy head
         head = curr = ListNode(0)
         while l1 or l2:
             val = carry

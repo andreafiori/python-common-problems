@@ -65,40 +65,34 @@ class Person:
         return "Father and mother"
 
 
-def main():
-    """
-    >>> Jhon = Person('Jhon', 'Coder')
+"""
+>>> Jhon = Person('Jhon', 'Coder')
 
-    >>> Jhon.name
-    'Jhon'
-    >>> Jhon.occupation
-    'Coder'
+>>> Jhon.name
+'Jhon'
+>>> Jhon.occupation
+'Coder'
 
-    # Before we access `relatives`
-    >>> sorted(Jhon.__dict__.items())
-    [('call_count2', 0), ('name', 'Jhon'), ('occupation', 'Coder')]
+# Before we access `relatives`
+>>> sorted(Jhon.__dict__.items())
+[('call_count2', 0), ('name', 'Jhon'), ('occupation', 'Coder')]
 
-    >>> Jhon.relatives
-    'Many relatives.'
+>>> Jhon.relatives
+'Many relatives.'
 
-    # After we've accessed `relatives`
-    >>> sorted(Jhon.__dict__.items())
-    [('call_count2', 0), ..., ('relatives', 'Many relatives.')]
+# After we've accessed `relatives`
+>>> sorted(Jhon.__dict__.items())
+[('call_count2', 0), ..., ('relatives', 'Many relatives.')]
 
-    >>> Jhon.parents
-    'Father and mother'
+>>> Jhon.parents
+'Father and mother'
 
-    >>> sorted(Jhon.__dict__.items())
-    [('_lazy__parents', 'Father and mother'), ('call_count2', 1), ..., ('relatives', 'Many relatives.')]
+>>> sorted(Jhon.__dict__.items())
+[('_lazy__parents', 'Father and mother'), ('call_count2', 1), ..., ('relatives', 'Many relatives.')]
 
-    >>> Jhon.parents
-    'Father and mother'
+>>> Jhon.parents
+'Father and mother'
 
-    >>> Jhon.call_count2
-    1
-    """
-
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod(optionflags=doctest.ELLIPSIS)
+>>> Jhon.call_count2
+1
+"""

@@ -1,7 +1,6 @@
 """
 Implementation of the iterator pattern using the iterator protocol from Python
 
-*TL;DR
 Traverses a container and accesses the container's elements.
 """
 
@@ -31,28 +30,19 @@ class NumberWords:
         return self._WORD_MAP[current - 1]
 
 
-# Test the iterator
+"""
+# Counting to two...
+>>> for number in NumberWords(start=1, stop=2):
+...     print(number)
+one
+two
 
-def main():
-    """
-    # Counting to two...
-    >>> for number in NumberWords(start=1, stop=2):
-    ...     print(number)
-    one
-    two
-
-    # Counting to five...
-    >>> for number in NumberWords(start=1, stop=5):
-    ...     print(number)
-    one
-    two
-    three
-    four
-    five
-    """
-
-
-if __name__ == "__main__":
-    import doctest
-
-    doctest.testmod()
+# Counting to five...
+>>> for number in NumberWords(start=1, stop=5):
+...     print(number)
+one
+two
+three
+four
+five
+"""

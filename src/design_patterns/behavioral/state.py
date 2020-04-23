@@ -3,7 +3,6 @@ Implementation of the state pattern
 
 http://ginstrom.com/scribbles/2007/10/08/design-patterns-python-style/
 
-*TL;DR
 Implements state as a derived class of the state pattern interface.
 Implements state transitions by invoking methods from the pattern's superclass.
 """
@@ -46,8 +45,7 @@ class FmState(State):
 
 
 class Radio:
-
-    """A radio.     It has a scan button, and an AM/FM toggle switch."""
+    """A radio. It has a scan button, and an AM/FM toggle switch."""
 
     def __init__(self):
         """We have an AM state and an FM state"""

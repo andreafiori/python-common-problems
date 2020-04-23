@@ -1,7 +1,6 @@
 """
 An example of the Template pattern in Python
 
-*TL;DR
 Defines the skeleton of a base algorithm, deferring definition of exact
 steps to subclasses.
 

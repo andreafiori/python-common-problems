@@ -34,7 +34,6 @@ import random
 
 
 class PetShop:
-
     """A pet shop"""
 
     def __init__(self, animal_factory=None):
@@ -74,10 +73,8 @@ def random_animal():
     return random.choice([Dog, Cat])()
 
 
-# Show pets with various factories
-if __name__ == "__main__":
-
-    # A Shop that sells only cats
+"""
+# A Shop that sells only cats
     cat_shop = PetShop(Cat)
     cat_shop.show_pet()
     print("")
@@ -101,3 +98,4 @@ if __name__ == "__main__":
 # We have a lovely Cat
 # It says meow
 # ====================
+"""

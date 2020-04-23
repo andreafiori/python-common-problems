@@ -1,8 +1,6 @@
-""" Simple Calculator Utility """
-class Calculator(object):
-    def __init__(self):
-        pass
 
+
+class Calculator(object):
     @staticmethod
     def add(first, second):
         return first + second
@@ -19,5 +17,4 @@ class Calculator(object):
     def divide(first, second):
         if second == 0:
             raise Exception("You cannot divide by zero!")
-        else:
-            return first/ second
+        return first / second
