@@ -8,10 +8,13 @@
 
 import math
 
+
 class Solution(object):
+    MAX_INT = int(100000)
+
     def divide(self, dividend, divisor):
         if divisor == 0:
-            return MAX_INT
+            return self.MAX_INT
         if dividend == 0:
             return 0
         isPositive = (dividend < 0) == (divisor < 0)
@@ -38,8 +41,7 @@ class Solution(object):
     #         return min(result, 2147483647)
     #     return max(-result, -2147483648)
 
-if __name__ == '__main__':
-    s = Solution()
-    print s.divide(1, 1)
-
-
+"""
+s = Solution()
+print s.divide(1, 1)
+"""

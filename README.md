@@ -27,7 +27,9 @@ Run single unit test:
 
     pytest <path_to_file.py>
 
-Es: pytest tests/algorithms/strings/test_stringutil.py
+Es:
+    
+    pytest tests/algorithms/strings/test_stringutil.py
 
 ### Generate code coverage
 
@@ -37,12 +39,24 @@ Install coverage:
 
 Show coverage:
 
-    coverage run -m pytest
+    coverage run --source=src/ -m pytest
+
+Using pytest-cov. Install it:
+    
+    pip install pytest-cov 
+
+Show coverage
+
+    pytest --cov=src tests/
 
 Generate HTML reports:
 
-    coverage run -m pytest
+    coverage run --source=src/ -m pytest
     coverage html
+
+Coverage has a problem: it doesn't generate a report for files without test so I use pytest-cov:
+
+    pytest --cov=src tests/ --cov-report=html
 
 ### Running pylint:
 

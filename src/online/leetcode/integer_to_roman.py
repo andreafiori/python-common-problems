@@ -4,7 +4,7 @@
 #         :type num: int
 #         :rtype: str
 #         """
-#
+
 class Solution(object):
     # def intToRoman(self, num):
     #     #http://www.rapidtables.com/convert/number/how-number-to-roman-numerals.htm
@@ -41,7 +41,5 @@ class Solution(object):
             i += 1
         return roman
 
-if __name__ == '__main__':
-    # begin
-    s = Solution()
-    print s.intToRoman(90)
+# s = Solution()
+# print s.intToRoman(90)

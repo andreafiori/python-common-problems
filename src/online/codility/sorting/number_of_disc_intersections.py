@@ -81,18 +81,18 @@ def slow_solution(A):
     def intersect(ja, jb, ka, kb):
         return ka <= jb or jb >= ka or (ka >= ja and kb <= jb)
 
-    print A
+    print(A)
     minmax = []
     for k, v in enumerate(A):
         minmax.append([k-v, k+v])
     minmax.sort()
-    print minmax
+    print(minmax)
 
     import itertools
 
     count = 0
     for j, k in itertools.combinations(minmax, 2):
-        print j, k
+        print(j, k)
         if intersect(*(j + k)):
             count += 1
     return count
@@ -117,7 +117,7 @@ def fast_solution(A):
     # every time a disc closes we add an intersection for every disc that has opened
     # since the last close
     intersections = istart = 0
-    for iend in xrange(len(ends)):                                          # for every closing
+    for iend in range(len(ends)):                                          # for every closing
         while istart < len(starts) and starts[istart] <= ends[iend]:        # step through unreconciled openings
             istart += 1
         intersections += istart - iend - 1                                  # and record them as intersections
@@ -147,7 +147,3 @@ class TestExercise(unittest.TestCase):
     def test_extreme_large(self):
         A = [10000000] * 100000
         self.assertEqual(solution(A), -1)
-
-
-if __name__ == '__main__':
-    unittest.main()

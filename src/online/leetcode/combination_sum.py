@@ -43,9 +43,10 @@ class Solution(object):
         return dp[target]
 
 
-if __name__ == '__main__':
-    s = Solution()
-    print s.combinationSum([8,7,4,3], 11)
+"""
+s = Solution()
+print( s.combinationSum([8,7,4,3], 11) )
+"""
 
 
 

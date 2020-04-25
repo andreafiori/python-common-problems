@@ -12,16 +12,10 @@ and the other deletes it. Both items have an undo option.
 Each item is a MenuItem class that accepts the corresponding command as input and executes
 it's execute method when it is pressed.
 
-*TL;DR
-Object oriented implementation of callback functions.
-
-*Examples in Python ecosystem:
-Django HttpRequest (without execute method):
-https://docs.djangoproject.com/en/2.1/ref/request-response/#httprequest-objects
 """
 
 
-class HideFileCommand:
+class HideFileCommand(object):
     """
     A command to hide a file given its name
     """
@@ -31,15 +25,15 @@ class HideFileCommand:
         self._hidden_files = []
 
     def execute(self, filename):
-        print(f'hiding {filename}')
         self._hidden_files.append(filename)
+        return f'hiding {filename}'
 
     def undo(self):
         filename = self._hidden_files.pop()
-        print(f'un-hiding {filename}')
+        return f'un-hiding {filename}'
 
 
-class DeleteFileCommand:
+class DeleteFileCommand(object):
     """
     A command to delete a file given its name
     """
@@ -49,15 +43,15 @@ class DeleteFileCommand:
         self._deleted_files = []
 
     def execute(self, filename):
-        print(f'deleting {filename}')
         self._deleted_files.append(filename)
+        return f'deleting {filename}'
 
     def undo(self):
         filename = self._deleted_files.pop()
-        print(f'restoring {filename}')
+        return f'restoring {filename}'
 
 
-class MenuItem:
+class MenuItem(object):
     """
     The invoker class. Here it is items in a menu.
     """
@@ -70,29 +64,3 @@ class MenuItem:
 
     def on_undo_press(self):
         self._command.undo()
-
-
-"""
->>> item1 = MenuItem(DeleteFileCommand())
-
->>> item2 = MenuItem(HideFileCommand())
-
-# create a file named `test-file` to work with
->>> test_file_name = 'test-file'
-
-# deleting `test-file`
->>> item1.on_do_press(test_file_name)
-deleting test-file
-
-# restoring `test-file`
->>> item1.on_undo_press()
-restoring test-file
-
-# hiding `test-file`
->>> item2.on_do_press(test_file_name)
-hiding test-file
-
-# un-hiding `test-file`
->>> item2.on_undo_press()
-un-hiding test-file
-"""

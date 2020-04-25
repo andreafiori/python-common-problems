@@ -40,6 +40,7 @@ class Solution(object):
     #                           for i in range(len(s)))
     #         return memo[s]
     #     return can(s)
+
     # https://discuss.leetcode.com/topic/27282/theory-matters-from-backtracking-128ms-to-dp-0ms/3
     # def canWin(self, s):
     #     g, G = [0], 0
@@ -79,6 +80,6 @@ class Solution(object):
     #             return i
     #     return ls
 
-if __name__ == '__main__':
-    s = Solution()
-    print s.canWin("++++")
+
+# s = Solution()
+# print s.canWin("++++")

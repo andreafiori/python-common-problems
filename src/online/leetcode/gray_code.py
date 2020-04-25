@@ -19,7 +19,5 @@ class Solution(object):
     #         count += 1
     #     return count
 
-if __name__ == "__main__":
-    s = Solution()
-    print s.grayCode(2)
-
+# s = Solution()
+# print( s.grayCode(2) )

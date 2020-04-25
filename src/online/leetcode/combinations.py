@@ -9,7 +9,7 @@ class Solution(object):
     #     candidates = range(1, n + 1)
     #     self.get_combine(res, candidates, [], k, 0)
     #     return res
-    #
+
     # def get_combine(self, res, candidates, prefix, k, start):
     #     # recursive
     #     if k == 0:
@@ -30,14 +30,11 @@ class Solution(object):
             res.append(list(prefix))
         elif start <= n:
             prefix.append(start)
-            self.get_combine(res, prefix,
-                             n, k - 1, start + 1)
+            self.get_combine(res, prefix, n, k - 1, start + 1)
             prefix.pop()
-            self.get_combine(res, prefix,
-                             n, k, start + 1)
+            self.get_combine(res, prefix, n, k, start + 1)
 
-
-
-if __name__ == "__main__":
-    s = Solution()
-    print s.combine(4, 2)
+"""
+s = Solution()
+print s.combine(4, 2)
+"""

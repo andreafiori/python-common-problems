@@ -1,4 +1,4 @@
-class Person:
+class Person(object):
     def __init__(self, name, action):
         """
         Constructor
@@ -9,25 +9,21 @@ class Person:
         self.action = action
 
     def do_action(self):
-        print(self.name, self.action.name, end=' ')
+        # print(self.name, self.action.name, end=' ')
         return self.action
 
 
-class Action:
+class Action(object):
     def __init__(self, name):
         self.name = name
+        self.amount = 0
 
-    def amount(self, val):
-        print(val, end=' ')
-        return self
+    def set_amount(self, val):
+        self.amount = val
+
+    def get_amount(self):
+        return self.amount
 
     def stop(self):
-        print('then stop')
+        return 'then stop'
 
-
-"""
->>> move = Action('move')
->>> person = Person('Jack', move)
->>> person.do_action().amount('5m').stop()
-Jack move 5m then stop
-"""

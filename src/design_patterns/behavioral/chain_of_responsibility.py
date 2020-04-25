@@ -43,15 +43,20 @@ class Handler(metaclass=abc.ABCMeta):
 
 
 class ConcreteHandler0(Handler):
-    """Each handler can be different.
+    """
+    Each handler can be different.
     Be simple and static...
     """
 
-    @staticmethod
-    def check_range(request):
+    def check_range(self, request):
+        """
+        Check range
+        :param request:
+        :return:
+        """
+
         if 0 <= request < 10:
-            print("request {} handled in handler 0".format(request))
-            return True
+            return "request {} handled in handler 0".format(request)
 
 
 class ConcreteHandler1(Handler):
@@ -60,19 +65,27 @@ class ConcreteHandler1(Handler):
     start, end = 10, 20
 
     def check_range(self, request):
+        """
+        Check range
+        :param request:
+        :return:
+        """
         if self.start <= request < self.end:
-            print("request {} handled in handler 1".format(request))
-            return True
+            return "request {} handled in handler 1".format(request)
 
 
 class ConcreteHandler2(Handler):
     """... With helper methods."""
 
     def check_range(self, request):
+        """
+        Check range
+        :param request:
+        :return:
+        """
         start, end = self.get_interval_from_db()
         if start <= request < end:
-            print("request {} handled in handler 2".format(request))
-            return True
+            return "request {} handled in handler 2".format(request)
 
     @staticmethod
     def get_interval_from_db():
@@ -80,28 +93,10 @@ class ConcreteHandler2(Handler):
 
 
 class FallbackHandler(Handler):
-    @staticmethod
-    def check_range(request):
-        print("end of chain, no handler for {}".format(request))
-        return False
-
-"""
->>> h0 = ConcreteHandler0()
->>> h1 = ConcreteHandler1()
->>> h2 = ConcreteHandler2(FallbackHandler())
->>> h0.successor = h1
->>> h1.successor = h2
-
->>> requests = [2, 5, 14, 22, 18, 3, 35, 27, 20]
->>> for request in requests:
-...     h0.handle(request)
-request 2 handled in handler 0
-request 5 handled in handler 0
-request 14 handled in handler 1
-request 22 handled in handler 2
-request 18 handled in handler 1
-request 3 handled in handler 0
-end of chain, no handler for 35
-request 27 handled in handler 2
-request 20 handled in handler 2
-"""
+    def check_range(self,  request):
+        """
+        Check range
+        :param request:
+        :return:
+        """
+        return("end of chain, no handler for {}".format(request))
