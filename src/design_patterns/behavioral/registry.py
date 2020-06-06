@@ -1,6 +1,5 @@
 """
 Registry Holder
-
 """
 
 
@@ -28,18 +27,3 @@ class BaseRegisteredClass(metaclass=RegistryHolder):
     inside the dict RegistryHolder.REGISTRY, the key being the name of the
     class and the associated value, the class itself.
     """
-
-
-"""
-Before subclassing
->>> sorted(RegistryHolder.REGISTRY)
-['BaseRegisteredClass']
-
->>> class ClassRegistree(BaseRegisteredClass):
-...    def __init__(self, *args, **kwargs):
-...        pass
-
-After subclassing
->>> sorted(RegistryHolder.REGISTRY)
-['BaseRegisteredClass', 'ClassRegistree']
-"""

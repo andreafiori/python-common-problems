@@ -1,5 +1,5 @@
 """
-*What is this pattern about?
+Strategy pattern
 Define a family of algorithms, encapsulate each one, and make them interchangeable.
 Strategy lets the algorithm vary independently from clients that use it.
 
@@ -30,15 +30,3 @@ def ten_percent_discount(order):
 
 def on_sale_discount(order):
     return order.price * 0.25 + 20
-
-
-"""
->>> Order(100)
-<Price: 100, price after discount: 100>
-
->>> Order(100, discount_strategy=ten_percent_discount)
-<Price: 100, price after discount: 90.0>
-
->>> Order(1000, discount_strategy=on_sale_discount)
-<Price: 1000, price after discount: 730.0>
-"""

@@ -3,7 +3,8 @@ Array Of Doubled Pairs
 
 URL https://leetcode.com/problems/array-of-doubled-pairs/
 
-Given an array of integers A with even length, return true if and only if it is possible to reorder it such that A[2 * i + 1] = 2 * A[2 * i] for every 0 <= i < len(A) / 2.
+Given an array of integers A with even length, return true if and only if it is possible to reorder it
+ such that A[2 * i + 1] = 2 * A[2 * i] for every 0 <= i < len(A) / 2.
 
 Example 1:
     Input: [3,1,3,6]
@@ -31,16 +32,16 @@ Note:
 
 
 class ArrayOfDoubledPairs(object):
-    def canReorderDoubled(self, A):
+    def can_reorder_doubled(self, arr):
         """
-        :type A: List[int]
+        :type arr: List[int]
         :rtype: bool
         """
         v_map = {}
-        A.sort(key=lambda x: abs(x))
-        for n in A:
+        arr.sort(key=lambda x: abs(x))
+        for n in arr:
             v_map[n] = v_map.get(n, 0) + 1
-        for n in A:
+        for n in arr:
             if v_map[n] <= 0:
                 continue
             if 2 * n in v_map and v_map[2 * n] > 0:
@@ -49,11 +50,3 @@ class ArrayOfDoubledPairs(object):
             else:
                 return False
         return True
-
-"""
-s = ArrayOfDoubledPairs()
-print s.canReorderDoubled([3, 1, 3, 6])
-print s.canReorderDoubled([2, 1, 2, 6])
-print s.canReorderDoubled([4, -2, 2, -4])
-print s.canReorderDoubled([1, 2, 4, 16, 8, 4])
-"""

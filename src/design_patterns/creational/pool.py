@@ -24,13 +24,17 @@ function is deleted (by the GC) and the object is returned.
 http://stackoverflow.com/questions/1514120/python-implementation-of-the-object-pool-design-pattern
 https://sourcemaking.com/design_patterns/object_pool
 
-*TL;DR
 Stores a set of initialized objects kept ready to use.
 """
 
 
 class ObjectPool:
     def __init__(self, queue, auto_get=False):
+        """
+        Constructor
+        :param queue:
+        :param auto_get:
+        """
         self._queue = queue
         self.item = self._queue.get() if auto_get else None
 
@@ -40,6 +44,13 @@ class ObjectPool:
         return self.item
 
     def __exit__(self, Type, value, traceback):
+        """
+        Exit
+        :param Type:
+        :param value:
+        :param traceback:
+        :return:
+        """
         if self.item is not None:
             self._queue.put(self.item)
             self.item = None

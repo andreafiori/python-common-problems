@@ -59,3 +59,39 @@ class TestProvider(unittest.TestCase):
             mock_subscriber1_run.assert_has_calls(expected_sub1_calls)
             expected_sub2_calls = [call('sub 2 msg 1'), call('sub 2 msg 2')]
             mock_subscriber2_run.assert_has_calls(expected_sub2_calls)
+
+"""
+>>> message_center = Provider()
+
+>>> fftv = Publisher(message_center)
+
+>>> jim = Subscriber("jim", message_center)
+>>> jim.subscribe("cartoon")
+>>> jack = Subscriber("jack", message_center)
+>>> jack.subscribe("music")
+>>> gee = Subscriber("gee", message_center)
+>>> gee.subscribe("movie")
+>>> vani = Subscriber("vani", message_center)
+>>> vani.subscribe("movie")
+>>> vani.unsubscribe("movie")
+
+# Note that no one subscirbed to `ads`
+# and that vani changed their mind
+
+>>> fftv.publish("cartoon")
+>>> fftv.publish("music")
+>>> fftv.publish("ads")
+>>> fftv.publish("movie")
+>>> fftv.publish("cartoon")
+>>> fftv.publish("cartoon")
+>>> fftv.publish("movie")
+>>> fftv.publish("blank")
+
+>>> message_center.update()
+jim got cartoon
+jack got music
+gee got movie
+jim got cartoon
+jim got cartoon
+gee got movie
+"""

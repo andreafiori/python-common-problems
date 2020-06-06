@@ -122,7 +122,3 @@ class TestExercise(unittest.TestCase):
 # large_random = 10 and 100 random permutation, X = ~10000
 # large_permutation = permutation tests (2)
 # large_range = arithmetic sequences X=30000
-
-
-if __name__ == '__main__':
-    unittest.main()

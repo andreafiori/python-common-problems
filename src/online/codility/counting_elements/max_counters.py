@@ -162,5 +162,3 @@ class TestExercise(unittest.TestCase):
         # ten thousand counters, 90 thousand operations
         arr = [random.randint(1, 9999) for _ in range(90000)]
         """ print self.maxCounters.solution(9999, arr) """
-
-

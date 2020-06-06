@@ -1,22 +1,24 @@
 """
 URL: https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/
 """
-def cyclic_rotation(A, K):
+
+
+def cyclic_rotation(a, k):
     """
     Rotate the array A by k steps
-    :param A: an array of integers
-    :param K: number of times to shift right
+    :param a: an array of integers
+    :param k: number of times to shift right
     :return: the rotated array
     """
     # A is empty
-    if not len(A):
-        return A
+    if not len(a):
+        return a
 
     # netK is the net number of shifts to apply (omits spinning round and round)
-    netK = (len(A) + K) % len(A)
-    if netK > 0:
-        head = A[len(A)-netK:]
-        tail = A[:-netK]
+    net_k = (len(a) + k) % len(a)
+    if net_k > 0:
+        head = a[len(a) - net_k:]
+        tail = a[:-net_k]
         return head + tail
     else:
-        return A
+        return a

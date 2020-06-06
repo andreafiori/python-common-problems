@@ -1,10 +1,12 @@
 """
 Implementation of the state pattern
 
-http://ginstrom.com/scribbles/2007/10/08/design-patterns-python-style/
+https://en.wikipedia.org/wiki/State_pattern
 
-Implements state as a derived class of the state pattern interface.
-Implements state transitions by invoking methods from the pattern's superclass.
+The state pattern is a behavioral software design pattern that allows an object to alter its behavior when its internal
+ state changes. This pattern is close to the concept of finite-state machines.
+ The state pattern can be interpreted as a strategy pattern, which is able to switch a strategy through invocations
+ of methods defined in the pattern's interface.
 """
 
 
@@ -12,36 +14,42 @@ class State:
 
     """Base state. This is to share functionality"""
 
+    def __init__(self):
+        self.stations = None
+        self.name = None
+
     def scan(self):
         """Scan the dial to the next station"""
         self.pos += 1
         if self.pos == len(self.stations):
             self.pos = 0
-        print("Scanning... Station is {} {}".format(self.stations[self.pos], self.name))
+        return "Scanning... Station is {} {}".format(self.stations[self.pos], self.name)
 
 
 class AmState(State):
     def __init__(self, radio):
+        super().__init__()
         self.radio = radio
         self.stations = ["1250", "1380", "1510"]
         self.pos = 0
         self.name = "AM"
 
     def toggle_amfm(self):
-        print("Switching to FM")
         self.radio.state = self.radio.fmstate
+        return "Switching to FM"
 
 
 class FmState(State):
     def __init__(self, radio):
+        super().__init__()
         self.radio = radio
         self.stations = ["81.3", "89.1", "103.9"]
         self.pos = 0
         self.name = "FM"
 
     def toggle_amfm(self):
-        print("Switching to AM")
         self.radio.state = self.radio.amstate
+        return "Switching to AM"
 
 
 class Radio:
@@ -54,27 +62,7 @@ class Radio:
         self.state = self.amstate
 
     def toggle_amfm(self):
-        self.state.toggle_amfm()
+        return self.state.toggle_amfm()
 
     def scan(self):
-        self.state.scan()
-
-
-"""
->>> radio = Radio()
->>> actions = [radio.scan] * 2 + [radio.toggle_amfm] + [radio.scan] * 2
->>> actions *= 2
-
->>> for action in actions:
-...    action()
-Scanning... Station is 1380 AM
-Scanning... Station is 1510 AM
-Switching to FM
-Scanning... Station is 89.1 FM
-Scanning... Station is 103.9 FM
-Scanning... Station is 81.3 FM
-Scanning... Station is 89.1 FM
-Switching to AM
-Scanning... Station is 1250 AM
-Scanning... Station is 1380 AM
-"""
+        return self.state.scan()

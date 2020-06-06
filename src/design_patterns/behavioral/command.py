@@ -25,6 +25,11 @@ class HideFileCommand(object):
         self._hidden_files = []
 
     def execute(self, filename):
+        """
+
+        :param filename: string
+        :return: string
+        """
         self._hidden_files.append(filename)
         return f'hiding {filename}'
 
@@ -57,10 +62,14 @@ class MenuItem(object):
     """
 
     def __init__(self, command):
+        """
+        Set command object
+        :param command: Command
+        """
         self._command = command
 
     def on_do_press(self, filename):
-        self._command.execute(filename)
+        return self._command.execute(filename)
 
     def on_undo_press(self):
-        self._command.undo()
+        return self._command.undo()

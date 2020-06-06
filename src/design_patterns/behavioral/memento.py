@@ -1,13 +1,8 @@
-"""
-Memento: http://code.activestate.com/recipes/413838-memento-closure/
-
-Provides the ability to restore an object to its previous state.
-"""
-
 from copy import copy
 from copy import deepcopy
 
 
+# Memento: provides the ability to restore an object to its previous state.
 def memento(obj, deep=False):
     state = deepcopy(obj.__dict__) if deep else copy(obj.__dict__)
 
@@ -77,56 +72,3 @@ class NumObj:
     def do_stuff(self):
         self.value = '1111'  # <- invalid value
         self.increment()  # <- will fail and rollback
-
-
-"""
->>> num_obj = NumObj(-1)
->>> print(num_obj)
-<NumObj: -1>
-
->>> a_transaction = Transaction(True, num_obj)
-
->>> try:
-...    for i in range(3):
-...        num_obj.increment()
-...        print(num_obj)
-...    a_transaction.commit()
-...    print('-- committed')
-...    for i in range(3):
-...        num_obj.increment()
-...        print(num_obj)
-...    num_obj.value += 'x'  # will fail
-...    print(num_obj)
-... except Exception:
-...    a_transaction.rollback()
-...    print('-- rolled back')
-<NumObj: 0>
-<NumObj: 1>
-<NumObj: 2>
--- committed
-<NumObj: 3>
-<NumObj: 4>
-<NumObj: 5>
--- rolled back
-
->>> print(num_obj)
-<NumObj: 2>
-
->>> print('-- now doing stuff ...')
--- now doing stuff ...
-
->>> try:
-...    num_obj.do_stuff()
-... except Exception:
-...    print('-> doing stuff failed!')
-...    import sys
-...    import traceback
-...    traceback.print_exc(file=sys.stdout)
--> doing stuff failed!
-Traceback (most recent call last):
-...
-TypeError: ...str...int...
-
->>> print(num_obj)
-<NumObj: 2>
-"""

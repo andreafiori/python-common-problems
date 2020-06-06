@@ -50,18 +50,3 @@ class PrototypeDispatcher:
         """Unregister an object"""
         del self._objects[name]
 
-
-"""
->>> dispatcher = PrototypeDispatcher()
->>> prototype = Prototype()
-
->>> d = prototype.clone()
->>> a = prototype.clone(value='a-value', category='a')
->>> b = prototype.clone(value='b-value', is_checked=True)
->>> dispatcher.register_object('objecta', a)
->>> dispatcher.register_object('objectb', b)
->>> dispatcher.register_object('default', d)
-
->>> [{n: p.value} for n, p in dispatcher.get_objects().items()]
-[{'objecta': 'a-value'}, {'objectb': 'b-value'}, {'default': 'default'}]
-"""

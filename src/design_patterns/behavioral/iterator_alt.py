@@ -28,21 +28,3 @@ class NumberWords:
         current = self.start
         self.start += 1
         return self._WORD_MAP[current - 1]
-
-
-"""
-# Counting to two...
->>> for number in NumberWords(start=1, stop=2):
-...     print(number)
-one
-two
-
-# Counting to five...
->>> for number in NumberWords(start=1, stop=5):
-...     print(number)
-one
-two
-three
-four
-five
-"""

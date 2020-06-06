@@ -1,9 +1,10 @@
 import unittest
+
 from src.design_patterns.creational.prototype import Prototype, PrototypeDispatcher
 
 
 class TestPrototypeFeatures(unittest.TestCase):
-    def setUp(self):
+    def setUp(self) -> None:
         self.prototype = Prototype()
 
     def test_cloning_propperty_innate_values(self):

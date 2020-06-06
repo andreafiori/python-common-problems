@@ -11,6 +11,11 @@ class Stack(object):
         return self.items == []
 
     def push(self, item):
+        """
+        Push element to the stack
+        :param item:
+        :return:
+        """
         self.items.append(item)
 
     def pop(self):
